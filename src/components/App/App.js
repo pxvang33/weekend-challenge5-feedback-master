@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import FeelingFeedback from './../FeelingFeedback/FeelingFeedback.js';
+import UnderstandingFeedback from './../UnderstandingFeedback/UnderstandingFeedback.js';
+
 
 class App extends Component {
   render() {
