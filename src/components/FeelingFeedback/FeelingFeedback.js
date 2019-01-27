@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import FeelingReview from './FeelingReview.js';
 
 
 class FeelingFeedback extends Component {
@@ -33,6 +34,8 @@ class FeelingFeedback extends Component {
                 <h1> How are you feeling today? </h1>
                 <input onChange={this.feelingChange} type="number" /> 
                 <button onClick={this.submitFeeling}>Next</button>
+                <br /> 
+                <FeelingReview />
 
             </div>
         
