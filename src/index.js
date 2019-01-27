@@ -8,9 +8,9 @@ import {Provider} from 'react-redux';
 import {createStore, combineReducers,applyMiddleware} from 'redux';
 
 // reducers below
-const feeling = ( state = {}, action) => {
+const feeling = ( state = [], action) => {
     if (action.type === 'ADD_FEELING'){
-        return action.payload;
+        return [...state, action.payload];
     }
     return state
 }

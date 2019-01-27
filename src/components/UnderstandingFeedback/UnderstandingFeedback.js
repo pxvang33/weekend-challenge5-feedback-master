@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import UnderstandingReview from './UnderstandingReview';
+
 
 
 class UnderstandingFeedback extends Component {
@@ -7,7 +9,7 @@ class UnderstandingFeedback extends Component {
         return (
             <div>
                 <h1> How well are you understanding the content? </h1>
-
+                <UnderstandingReview />
             </div>
 
         );

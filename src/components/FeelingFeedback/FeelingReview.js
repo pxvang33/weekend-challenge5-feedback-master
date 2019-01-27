@@ -8,7 +8,13 @@ class FeelingReview extends Component {
             <div>
                 <h1> Review your feedback </h1>
                 <ul>
-                    <li>Feelings:  </li>
+                    {JSON.stringify(this.props)}
+                    <li>Feelings:   </li>
+                    <li>Understanding: </li>
+                    <li>Support: </li>
+                    <li>Comments: </li>
+                    <button>Submit</button>
+
                 </ul>
 
             </div>
