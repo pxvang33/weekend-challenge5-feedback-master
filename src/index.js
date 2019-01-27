@@ -8,16 +8,23 @@ import {Provider} from 'react-redux';
 import {createStore, combineReducers,applyMiddleware} from 'redux';
 
 // reducers below
-
+const feeling = ( state = {}, action) => {
+    if (action.type === 'ADD_FEELING'){
+        return action.payload;
+    }
+    return state
+}
 
 
 const storeInstance = createStore(
     combineReducers({
+        feeling,
 
     }), // end combineReducers
 
     applyMiddleware(logger),
 );
 
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, 
+    document.getElementById('root'));
 registerServiceWorker();
