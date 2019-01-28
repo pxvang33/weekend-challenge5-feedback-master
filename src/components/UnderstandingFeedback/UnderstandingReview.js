@@ -8,10 +8,10 @@ class UnderstandingReview extends Component {
             <div>
                 <h1> Review your feedback </h1>
                 <ul>
-                    <li >Feeling:  {this.props.reduxStore.feelingReview.feeling} </li>
-                    <li>Understanding: {this.props.reduxStore.feelingReview.understanding}</li>
-                    <li>Support: {this.props.reduxStore.feelingReview.support}</li>
-                    <li>Comments: {this.props.reduxStore.feelingReview.comments}</li>
+                    <li >Feeling:  {this.props.reduxStore.feedbackReview.feeling} </li>
+                    <li>Understanding: {this.props.reduxStore.feedbackReview.understanding}</li>
+                    <li>Support: {this.props.reduxStore.feedbackReview.support}</li>
+                    <li>Comments: {this.props.reduxStore.feedbackReview.comments}</li>
                 <button>Submit</button>
                 </ul>
                     {JSON.stringify(this.props.reduxStore)}

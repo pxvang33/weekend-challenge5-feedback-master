@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-class FeelingReview extends Component {
+class SupportReview extends Component {
+
     render() {
         return (
             <div>
@@ -13,21 +14,8 @@ class FeelingReview extends Component {
                     <li>Support: {this.props.reduxStore.feedbackReview.support}</li>
                     <li>Comments: {this.props.reduxStore.feedbackReview.comments}</li>
                     <button>Submit</button>
-
                 </ul>
                 {JSON.stringify(this.props.reduxStore)}
-                {/* {this.props.reduxStore.feelingReview.map((review, i) => {
-                    return (
-                        <ul key={i}>
-                            <li >Feeling:  {review.feeling} </li>
-                            <li>Understanding: {review.understanding}</li>
-                            <li>Support: {review.support}</li>
-                            <li>Comments: {review.comments}</li>
-                            <button>Submit</button>
-
-                        </ul>
-                    ) // end return
-                })} */}
             </div>
 
         );
@@ -38,4 +26,4 @@ class FeelingReview extends Component {
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore: reduxStore
 });
-export default connect(mapReduxStoreToProps)(FeelingReview);
+export default connect(mapReduxStoreToProps)(SupportReview);

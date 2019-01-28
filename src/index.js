@@ -16,12 +16,15 @@ let feedbackReviewItems =
      comments: '' }
     ;
 
-const feelingReview = ( state = feedbackReviewItems, action) => {
+const feedbackReview = ( state = feedbackReviewItems, action) => {
     if (action.type === 'ADD_FEELING'){
         return {...state, feeling: action.payload }
     }
     else if (action.type === 'ADD_UNDERSTANDING') {
         return { ...state, understanding: action.payload }
+    }
+    else if (action.type === 'ADD_SUPPORT') {
+        return { ...state, support: action.payload }
     }
     return state
 }
@@ -35,7 +38,7 @@ const feelingReview = ( state = feedbackReviewItems, action) => {
 
 const storeInstance = createStore(
     combineReducers({
-        feelingReview,
+        feedbackReview,
         
 
     }), // end combineReducers
