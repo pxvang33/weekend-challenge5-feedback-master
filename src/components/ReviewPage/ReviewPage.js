@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 
 class Review extends Component {
     submitFeedback = () => {
-        // let comments = this.state.commentsToAdd
-        // let action = { type: 'ADD_COMMENTS', payload: comments }
-        // this.props.dispatch(action);
-        this.props.history.push('/thankyou')
+        let feedbackToServer = this.props.reduxStore.feedbackReview;
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: feedbackToServer
+        }).then((response) => {
+        }).catch((error) => {
+            alert('Post to server not working')
+        });
 
+        this.props.history.push('/thankyou')
     }
     render() {
         return (
