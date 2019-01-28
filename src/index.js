@@ -10,9 +10,9 @@ import {createStore, combineReducers,applyMiddleware} from 'redux';
 // reducers below
 
 let feedbackReviewItems = 
-    { feeling: 3,
-     understanding: 1 ,
-     support: 0 ,
+    { feeling: 0,
+     understanding: 0,
+     support: 0,
      comments: '' }
     ;
 
@@ -26,14 +26,11 @@ const feedbackReview = ( state = feedbackReviewItems, action) => {
     else if (action.type === 'ADD_SUPPORT') {
         return { ...state, support: action.payload }
     }
+    else if (action.type === 'ADD_COMMENTS') {
+        return { ...state, comments: action.payload }
+    }
     return state
 }
-// const understandingReview = (state = feedbackReviewItems, action) => {
-//     if (action.type === 'ADD_UNDERSTANDING') {
-//         return {...state, understanding: action.payload};
-//     }
-//     return state
-// }
 
 
 const storeInstance = createStore(

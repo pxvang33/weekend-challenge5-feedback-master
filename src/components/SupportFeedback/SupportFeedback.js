@@ -25,15 +25,15 @@ class SupportFeedback extends Component {
         let support = this.state.supportToAdd
         let action = { type: 'ADD_SUPPORT', payload: support }
         this.props.dispatch(action);
-        this.props.history.push('/supportfeedback')
+        this.props.history.push('/commentsfeedback')
 
     }
     render() {
         return (
             <div>
-                <h1> How well are you understanding the content? </h1>
+                <h1> How well are you being supported? </h1>
                 <input onChange={this.supportToChange} type="number" />
-                <button onClick={this.submitFeeling}>Next</button>
+                <button onClick={this.submitSupport}>Next</button>
 
                 <SupportReview />   
             </div>

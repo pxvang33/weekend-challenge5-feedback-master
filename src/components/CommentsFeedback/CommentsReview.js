@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-class UnderstandingReview extends Component {
+class CommentsReview extends Component {
+
     render() {
         return (
             <div>
@@ -12,9 +13,9 @@ class UnderstandingReview extends Component {
                     <li>Understanding: {this.props.reduxStore.feedbackReview.understanding}</li>
                     <li>Support: {this.props.reduxStore.feedbackReview.support}</li>
                     <li>Comments: {this.props.reduxStore.feedbackReview.comments}</li>
-                <button>Submit</button>
+                    <button>Submit</button>
                 </ul>
-                    {JSON.stringify(this.props.reduxStore)}
+                {JSON.stringify(this.props.reduxStore)}
             </div>
 
         );
@@ -25,4 +26,4 @@ class UnderstandingReview extends Component {
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore: reduxStore
 });
-export default connect(mapReduxStoreToProps)(UnderstandingReview);
+export default connect(mapReduxStoreToProps)(CommentsReview);

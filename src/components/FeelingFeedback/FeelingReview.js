@@ -16,18 +16,7 @@ class FeelingReview extends Component {
 
                 </ul>
                 {JSON.stringify(this.props.reduxStore)}
-                {/* {this.props.reduxStore.feelingReview.map((review, i) => {
-                    return (
-                        <ul key={i}>
-                            <li >Feeling:  {review.feeling} </li>
-                            <li>Understanding: {review.understanding}</li>
-                            <li>Support: {review.support}</li>
-                            <li>Comments: {review.comments}</li>
-                            <button>Submit</button>
 
-                        </ul>
-                    ) // end return
-                })} */}
             </div>
 
         );

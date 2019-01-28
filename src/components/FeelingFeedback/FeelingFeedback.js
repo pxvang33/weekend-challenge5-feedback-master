@@ -24,6 +24,7 @@ class FeelingFeedback extends Component {
         let feeling = this.state.feelingToAdd
         let action = { type: 'ADD_FEELING', payload: feeling}
         this.props.dispatch(action);
+        
         this.props.history.push('/understandingfeedback')
 
     }

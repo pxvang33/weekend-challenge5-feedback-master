@@ -5,6 +5,7 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import FeelingFeedback from './../FeelingFeedback/FeelingFeedback.js';
 import UnderstandingFeedback from './../UnderstandingFeedback/UnderstandingFeedback.js';
 import SupportFeedback from './../SupportFeedback/SupportFeedback.js';
+import CommentsFeedback from './../CommentsFeedback/CommentsFeedback.js';
 
 
 class App extends Component {
@@ -20,7 +21,7 @@ class App extends Component {
         <div>
           <ul>
             <li>
-              <Link to="/understandingfeedback"> Understanding </Link>
+              <Link to="/"> Home </Link>
             </li>
           </ul>
         </div>
@@ -28,6 +29,7 @@ class App extends Component {
           <Route exact path="/" component={FeelingFeedback} />
           <Route exact path="/understandingfeedback" component={UnderstandingFeedback} />
           <Route exact path="/supportfeedback" component={SupportFeedback} />
+          <Route exact path="/commentsfeedback" component={CommentsFeedback} />
 
           </div>
         </Router>
