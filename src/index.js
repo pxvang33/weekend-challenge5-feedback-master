@@ -8,17 +8,35 @@ import {Provider} from 'react-redux';
 import {createStore, combineReducers,applyMiddleware} from 'redux';
 
 // reducers below
-const feeling = ( state = [], action) => {
+
+let feedbackReviewItems = 
+    { feeling: 3,
+     understanding: 1 ,
+     support: 0 ,
+     comments: '' }
+    ;
+
+const feelingReview = ( state = feedbackReviewItems, action) => {
     if (action.type === 'ADD_FEELING'){
-        return [...state, action.payload];
+        return {...state, feeling: action.payload }
+    }
+    else if (action.type === 'ADD_UNDERSTANDING') {
+        return { ...state, understanding: action.payload }
     }
     return state
 }
+// const understandingReview = (state = feedbackReviewItems, action) => {
+//     if (action.type === 'ADD_UNDERSTANDING') {
+//         return {...state, understanding: action.payload};
+//     }
+//     return state
+// }
 
 
 const storeInstance = createStore(
     combineReducers({
-        feeling,
+        feelingReview,
+        
 
     }), // end combineReducers
 

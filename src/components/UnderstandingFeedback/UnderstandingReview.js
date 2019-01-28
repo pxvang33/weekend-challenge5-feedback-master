@@ -7,20 +7,26 @@ class UnderstandingReview extends Component {
         return (
             <div>
                 <h1> Review your feedback </h1>
-
-                    {JSON.stringify(this.props)}
-                    {this.props.reduxStore.feeling.map((feeling, i)=>{
+                <ul>
+                    <li >Feeling:  {this.props.reduxStore.feelingReview.feeling} </li>
+                    <li>Understanding: {this.props.reduxStore.feelingReview.understanding}</li>
+                    <li>Support: {this.props.reduxStore.feelingReview.support}</li>
+                    <li>Comments: {this.props.reduxStore.feelingReview.comments}</li>
+                <button>Submit</button>
+                </ul>
+                    {JSON.stringify(this.props.reduxStore)}
+                {/* {this.props.reduxStore.understandingReview.map((review, i)=>{
                         return(
                             <ul key={i}>
-                                <li >Feelings:  {feeling} </li>
-                                <li>Understanding: </li>
-                                <li>Support: </li>
-                                <li>Comments: </li>
+                                <li >Feelings:  {review.feeling} </li>
+                                <li>Understanding: {review.understanding}</li>
+                                <li>Support: {review.support}</li>
+                                <li>Comments: {review.comments}</li>
                                 <button>Submit</button>
 
                             </ul>
                         ) // end return
-                    })} 
+                    })}  */}
             </div>
 
         );
