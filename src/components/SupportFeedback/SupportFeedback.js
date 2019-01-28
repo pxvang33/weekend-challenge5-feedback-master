@@ -20,6 +20,8 @@ class SupportFeedback extends Component {
             }
         } // end state
     } // end constructor
+
+    // changes the local state depnding on what number is selected in the FormControl
     supportToChange = (event) => {
         this.setState({
             supportToAdd: parseInt(event.target.value),
@@ -27,6 +29,8 @@ class SupportFeedback extends Component {
 
     } // end feelingChange
 
+    // on Next button click, will send local state as action to reduxStore which updates the feedbackReview support property
+    // value to whatever value was selected, button click also sends you to comments page
     submitSupport = () => {
         let support = this.state.supportToAdd
         let action = { type: 'ADD_SUPPORT', payload: support }
@@ -36,15 +40,15 @@ class SupportFeedback extends Component {
     }
     render() {
         return (
+              // material ui select, allows user to choose 1-5 with 1 being lowest to see how they are feeling
             <div>
                 <h1> How well are you being supported? </h1>
-                <FormControl className="form">
-                    <InputLabel htmlFor="age-native-helper">Select</InputLabel>
+                <FormControl >
+                    <InputLabel required htmlFor="age-native-helper">Select</InputLabel>
                     <NativeSelect
                         value={this.state.support}
                         onChange={this.supportToChange}
                         input={<Input name="select" />}
-                        className="form"
                     >
                         <option value="" />
                         <option value={1}>1 </option>
@@ -61,6 +65,7 @@ class SupportFeedback extends Component {
                 <br />                
                 <SupportReview />   
             </div>
+            // SupportReview child component which shows live update of what the user has selected
 
         );
     }

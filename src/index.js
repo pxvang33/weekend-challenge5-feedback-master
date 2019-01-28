@@ -8,14 +8,14 @@ import {Provider} from 'react-redux';
 import {createStore, combineReducers,applyMiddleware} from 'redux';
 
 // reducers below
-
+// setting initial state to 0 and empty strings to display beginning progress and reset state
 let feedbackReviewItems = 
     { feeling: 0,
      understanding: 0,
      support: 0,
      comments: '' }
     ;
-
+// created feedback reducuer which updates state and its properties depending on action type
 const feedbackReview = ( state = feedbackReviewItems, action) => {
     if (action.type === 'ADD_FEELING'){
         return {...state, feeling: action.payload }

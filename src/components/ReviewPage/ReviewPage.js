@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
+
 
 
 class Review extends Component {
+   // submit button creates axios post request to your local server,
+   // on submit click, your feedbackReview reducer from reduxStore is sent and stored in databsae
+   // allowing you to retrieve that feedback information the user has submitted throughout the app
+   // once axios request has gone through, a RESET action is sent to reduxStore, which resets the feedbackReview
+   // reducer and its properties to the inital state, `
     submitFeedback = () => {
         let feedbackToServer = this.props.reduxStore.feedbackReview;
         axios({
@@ -29,7 +36,10 @@ class Review extends Component {
                     <li>Understanding: {this.props.reduxStore.feedbackReview.understanding}</li>
                     <li>Support: {this.props.reduxStore.feedbackReview.support}</li>
                     <li>Comments: {this.props.reduxStore.feedbackReview.comments}</li>
-                    <button onClick={this.submitFeedback}>Submit</button>
+                    <br />                    
+
+                    <Button type="submit" variant="contained" color="primary" onClick={this.submitFeedback}>Submit</Button>
+
                 </ul>
             </div>
 

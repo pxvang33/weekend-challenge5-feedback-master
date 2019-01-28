@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 
 class Thankyou extends Component {
@@ -10,10 +11,12 @@ class Thankyou extends Component {
     }
     render() {
         return (
+            // button click sends you to inital feeling feedback page
             <div>
-                <h1> Thank you</h1>
+                <h1> Success! Thank you. </h1>
 
-                    <button onClick={this.submitNewFeedback}>Leave new feedback</button>
+                    <Button onClick={this.submitNewFeedback} variant="outlined" size="medium" color="primary" > Leave new feedback</Button>
+
 
             </div>
 

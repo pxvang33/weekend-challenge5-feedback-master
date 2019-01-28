@@ -20,33 +20,37 @@ class FeelingFeedback extends Component {
             }
         } // end state
     } // end constructor
+    
+    // changes the local state depnding on what number is selected in the FormControl
     feelingChange = (event) => {
         this.setState({
             feelingToAdd: parseInt(event.target.value),
         })
-
     } // end feelingChange
 
+    // on Next button click, will send local state as action to reduxStore which updates the feedbackReview feeling property
+    // value to whatever value was selected, button click also sends you to next understanding page
     submitFeeling = () => {
         let feeling = this.state.feelingToAdd
         let action = { type: 'ADD_FEELING', payload: feeling}
         this.props.dispatch(action);
-        
         this.props.history.push('/understandingfeedback')
 
     }
 
     render(){
         return(
+            // material ui select, allows user to choose 1-5 with 1 being lowest to see how they are feeling
             <div>
-
+                
                 <h1> How are you feeling today? </h1>
-                <FormControl >
-                    <InputLabel htmlFor="age-native-helper">Select</InputLabel>
+                <FormControl  >
+                    <InputLabel required htmlFor="age-native-helper">Select</InputLabel>
                     <NativeSelect
                         value={this.state.feeling}
                         onChange={this.feelingChange}
-                        input={<Input name="select" />}
+                        input={<Input  name="select" />}
+                        
                         
                     >
                         <option value="" />
@@ -64,7 +68,7 @@ class FeelingFeedback extends Component {
                 <FeelingReview />
 
             </div>
-        
+        // FeelingReview child component which shows live update of what the user has selected
         );
     }
 }

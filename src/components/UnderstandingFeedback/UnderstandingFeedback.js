@@ -21,6 +21,8 @@ class UnderstandingFeedback extends Component {
             }
         } // end state
     } // end constructor
+
+    // changes the local state depnding on what number is selected in the FormControl
     understandingToChange = (event) => {
         this.setState({
             understandingToAdd: parseInt(event.target.value),
@@ -28,6 +30,8 @@ class UnderstandingFeedback extends Component {
 
     } // end feelingChange
 
+    // on Next button click, will send local state as action to reduxStore which updates the feedbackReview understanding property
+    // value to whatever value was selected, button click also sends you to support page
     submitUnderstanding = () => {
         let understanding = this.state.understandingToAdd
         let action = { type: 'ADD_UNDERSTANDING', payload: understanding }
@@ -37,15 +41,16 @@ class UnderstandingFeedback extends Component {
     }
     render() {
         return (
+             // material ui select, allows user to choose 1-5 with 1 being lowest to see how they are feeling
             <div>              
                 <h1> How well are you understanding the content? </h1>
-                <FormControl className="form">
-                    <InputLabel htmlFor="age-native-helper">Select</InputLabel>
+                <FormControl >
+                    <InputLabel required htmlFor="age-native-helper">Select</InputLabel>
                     <NativeSelect
                         value={this.state.understanding}
                         onChange={this.understandingToChange}
-                        input={<Input name="select" />}
-                        className="form" >
+                        input={<Input name="select" />} 
+                        >
                         <option value="" />
                         <option value={1}>1 </option>
                         <option value={2}>2</option>
@@ -61,6 +66,7 @@ class UnderstandingFeedback extends Component {
 
                 <UnderstandingReview />
             </div>
+        // UnderstandingReview child component which shows live update of what the user has selected
 
         );
     }

@@ -4,6 +4,8 @@ const pool = require('../modules/pool');
 
 
 router.post('/', (req, res) => {
+    // post route which recieves feedbackReview information that was sent
+    // sends info to sql server and stores it there
     console.log('in /feedback POST:', req.body);
     const feedback = req.body;
     const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
