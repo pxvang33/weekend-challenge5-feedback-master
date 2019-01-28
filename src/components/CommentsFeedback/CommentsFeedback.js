@@ -15,7 +15,7 @@ class FeelingFeedback extends Component {
     } // end constructor
     commentsChange = (event) => {
         this.setState({
-            commentsToAdd: parseInt(event.target.value),
+            commentsToAdd: (event.target.value),
         })
 
     } // end feelingChange
@@ -24,7 +24,7 @@ class FeelingFeedback extends Component {
         let comments = this.state.commentsToAdd
         let action = { type: 'ADD_COMMENTS', payload: comments }
         this.props.dispatch(action);
-        this.props.history.push('/reviewpage')
+        this.props.history.push('/review')
 
     }
 
@@ -32,7 +32,7 @@ class FeelingFeedback extends Component {
         return (
             <div>
                 <h1> Any additional comments you want to leave? </h1>
-                <input onChange={this.commentsChange} type="number" />
+                <input onChange={this.commentsChange} type="text" />
                 <button onClick={this.submitComments}>Next</button>
                 <br />
                 <CommentsReview />

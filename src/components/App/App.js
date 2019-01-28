@@ -6,6 +6,8 @@ import FeelingFeedback from './../FeelingFeedback/FeelingFeedback.js';
 import UnderstandingFeedback from './../UnderstandingFeedback/UnderstandingFeedback.js';
 import SupportFeedback from './../SupportFeedback/SupportFeedback.js';
 import CommentsFeedback from './../CommentsFeedback/CommentsFeedback.js';
+import Review from './../ReviewPage/ReviewPage.js';
+import Thankyou from './../ReviewPage/ThankyouPage.js';
 
 
 class App extends Component {
@@ -30,6 +32,8 @@ class App extends Component {
           <Route exact path="/understandingfeedback" component={UnderstandingFeedback} />
           <Route exact path="/supportfeedback" component={SupportFeedback} />
           <Route exact path="/commentsfeedback" component={CommentsFeedback} />
+          <Route exact path="/review" component={Review} />
+            <Route exact path="/thankyou" component={Thankyou} />
 
           </div>
         </Router>
