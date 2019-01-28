@@ -4,14 +4,12 @@ import CommentsReview from './CommentsReview.js';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-
 class FeelingFeedback extends Component {
     constructor(props) {
         super(props);
         this.state = {
             commentsToAdd: {
                 comments: '',
-
             }
         } // end state
     } // end constructor
@@ -30,9 +28,7 @@ class FeelingFeedback extends Component {
         let action = { type: 'ADD_COMMENTS', payload: comments }
         this.props.dispatch(action);
         this.props.history.push('/review')
-
     }
-
     render() {
         return (
             <div>
@@ -46,21 +42,17 @@ class FeelingFeedback extends Component {
                     margin="normal"
                     variant="outlined"
                     onChange={this.commentsChange}
-                    className="textfield"
-                />
-                <br /> <br />
+                    className="textfield" />
+                <br />
+                <br />
                 <Button onClick={this.submitComments} variant="outlined" size="medium" color="primary" > Next </Button>
-
-                <br /> 
+                <br />
                 <br />
                 <CommentsReview />
-
             </div>
-
         );
     }
 }
-
 
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore: reduxStore

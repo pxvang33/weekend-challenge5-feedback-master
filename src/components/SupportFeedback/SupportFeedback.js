@@ -8,15 +8,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 
-
-
 class SupportFeedback extends Component {
     constructor(props) {
         super(props);
         this.state = {
             supportToAdd: {
                 support: '',
-
             }
         } // end state
     } // end constructor
@@ -36,11 +33,10 @@ class SupportFeedback extends Component {
         let action = { type: 'ADD_SUPPORT', payload: support }
         this.props.dispatch(action);
         this.props.history.push('/commentsfeedback')
-
     }
     render() {
         return (
-              // material ui select, allows user to choose 1-5 with 1 being lowest to see how they are feeling
+            // material ui select, allows user to choose 1-5 with 1 being lowest to see how they are feeling
             <div>
                 <h1> How well are you being supported? </h1>
                 <FormControl >
@@ -48,8 +44,7 @@ class SupportFeedback extends Component {
                     <NativeSelect
                         value={this.state.support}
                         onChange={this.supportToChange}
-                        input={<Input name="select" />}
-                    >
+                        input={<Input name="select" />}  >
                         <option value="" />
                         <option value={1}>1 </option>
                         <option value={2}>2</option>
@@ -60,17 +55,14 @@ class SupportFeedback extends Component {
                     <FormHelperText>Select from 1-5 where 1 being the lowest</FormHelperText>
                 </FormControl> <br /> <br />
                 <Button onClick={this.submitSupport} variant="outlined" size="medium" color="primary" > Next </Button>
-
                 <br />
-                <br />                
-                <SupportReview />   
+                <br />
+                <SupportReview />
             </div>
             // SupportReview child component which shows live update of what the user has selected
-
         );
     }
 }
-
 
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore: reduxStore

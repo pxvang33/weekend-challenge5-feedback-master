@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 
-
 class UnderstandingReview extends Component {
     render() {
         return (
@@ -15,16 +14,13 @@ class UnderstandingReview extends Component {
                     <li>Understanding: {this.props.reduxStore.feedbackReview.understanding}</li>
                     <li>Support: {this.props.reduxStore.feedbackReview.support}</li>
                     <li>Comments: {this.props.reduxStore.feedbackReview.comments}</li>
-                    <br />                    
-
+                    <br />
                     <Button variant="outlined" size="medium" color="primary" className="disabled">Incomplete </Button>
                 </ul>
             </div>
-
         );
     }
 }
-
 
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore: reduxStore

@@ -8,16 +8,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 
-
-
-
 class UnderstandingFeedback extends Component {
     constructor(props) {
         super(props);
         this.state = {
             understandingToAdd: {
                 understanding: '',
-
             }
         } // end state
     } // end constructor
@@ -27,7 +23,6 @@ class UnderstandingFeedback extends Component {
         this.setState({
             understandingToAdd: parseInt(event.target.value),
         })
-
     } // end feelingChange
 
     // on Next button click, will send local state as action to reduxStore which updates the feedbackReview understanding property
@@ -37,20 +32,18 @@ class UnderstandingFeedback extends Component {
         let action = { type: 'ADD_UNDERSTANDING', payload: understanding }
         this.props.dispatch(action);
         this.props.history.push('/supportfeedback')
-
     }
     render() {
         return (
-             // material ui select, allows user to choose 1-5 with 1 being lowest to see how they are feeling
-            <div>              
+            // material ui select, allows user to choose 1-5 with 1 being lowest to see how they are feeling
+            <div>
                 <h1> How well are you understanding the content? </h1>
                 <FormControl >
                     <InputLabel required htmlFor="age-native-helper">Select</InputLabel>
                     <NativeSelect
                         value={this.state.understanding}
                         onChange={this.understandingToChange}
-                        input={<Input name="select" />} 
-                        >
+                        input={<Input name="select" />}  >
                         <option value="" />
                         <option value={1}>1 </option>
                         <option value={2}>2</option>
@@ -63,15 +56,12 @@ class UnderstandingFeedback extends Component {
                 <br />
                 <br />
                 <Button onClick={this.submitUnderstanding} variant="outlined" size="medium" color="primary" > Next </Button>
-
                 <UnderstandingReview />
             </div>
-        // UnderstandingReview child component which shows live update of what the user has selected
-
+            // UnderstandingReview child component which shows live update of what the user has selected
         );
     }
 }
-
 
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore: reduxStore
