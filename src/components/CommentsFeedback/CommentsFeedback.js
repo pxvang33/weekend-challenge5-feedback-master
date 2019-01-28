@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CommentsReview from './CommentsReview.js';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 
 class FeelingFeedback extends Component {
@@ -32,8 +34,20 @@ class FeelingFeedback extends Component {
         return (
             <div>
                 <h1> Any additional comments you want to leave? </h1>
-                <input onChange={this.commentsChange} type="text" />
-                <button onClick={this.submitComments}>Next</button>
+
+                <TextField
+                    id="outlined-multiline-static"
+                    label="Additional Comments"
+                    multiline
+                    rows="4"
+                    margin="normal"
+                    variant="outlined"
+                    onChange={this.commentsChange}
+                />
+                <br /> <br />
+                <Button onClick={this.submitComments} variant="outlined" size="medium" color="primary" > Next </Button>
+
+                <br /> 
                 <br />
                 <CommentsReview />
 

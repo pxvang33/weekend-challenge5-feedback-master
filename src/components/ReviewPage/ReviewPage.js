@@ -11,7 +11,9 @@ class Review extends Component {
             url: '/feedback',
             data: feedbackToServer
         }).then((response) => {
-            
+            let action = {type: 'RESET'}
+            this.props.dispatch(action);
+
         }).catch((error) => {
             alert('Post to server not working')
         });
@@ -29,7 +31,6 @@ class Review extends Component {
                     <li>Comments: {this.props.reduxStore.feedbackReview.comments}</li>
                     <button onClick={this.submitFeedback}>Submit</button>
                 </ul>
-                {JSON.stringify(this.props.reduxStore)}
             </div>
 
         );

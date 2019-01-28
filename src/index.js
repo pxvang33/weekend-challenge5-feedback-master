@@ -29,7 +29,15 @@ const feedbackReview = ( state = feedbackReviewItems, action) => {
     else if (action.type === 'ADD_COMMENTS') {
         return { ...state, comments: action.payload }
     }
-    return state
+    else if ( action.type === 'RESET'){
+        return {
+            ...state, feeling: 0,
+            understanding: 0,
+            support: 0,
+            comments: '' } 
+    }
+
+return state;
 }
 
 
