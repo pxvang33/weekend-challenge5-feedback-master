@@ -12,13 +12,11 @@ class FeelingReview extends Component {
                     <li>Understanding: {this.props.reduxStore.feedbackReview.understanding}</li>
                     <li>Support: {this.props.reduxStore.feedbackReview.support}</li>
                     <li>Comments: {this.props.reduxStore.feedbackReview.comments}</li>
-                    <button>Submit</button>
+                    <button className="disabled">Incomplete</button>
 
                 </ul>
-                {JSON.stringify(this.props.reduxStore)}
 
             </div>
-
         );
     }
 }

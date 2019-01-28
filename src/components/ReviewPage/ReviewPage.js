@@ -11,6 +11,7 @@ class Review extends Component {
             url: '/feedback',
             data: feedbackToServer
         }).then((response) => {
+            
         }).catch((error) => {
             alert('Post to server not working')
         });

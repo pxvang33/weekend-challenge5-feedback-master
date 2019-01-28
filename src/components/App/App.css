@@ -23,3 +23,15 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+.disabled{
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: .25;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+.form{
+  width: 220px;
+}
