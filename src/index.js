@@ -31,12 +31,13 @@ const feedbackReview = (state = feedbackReviewItems, action) => {
         return { ...state, comments: action.payload }
     }
     else if (action.type === 'RESET') {
-        return {
-            ...state, feeling: 0,
-            understanding: 0,
-            support: 0,
-            comments: ''
-        }
+        return feedbackReviewItems
+        // return {
+        //     ...state, feeling: 0,
+        //     understanding: 0,
+        //     support: 0,
+        //     comments: ''
+        // }
     }
     return state;
 }

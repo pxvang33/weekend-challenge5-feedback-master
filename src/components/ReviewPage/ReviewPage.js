@@ -18,10 +18,10 @@ class Review extends Component {
         }).then((response) => {
             let action = { type: 'RESET' }
             this.props.dispatch(action);
+            this.props.history.push('/thankyou')
         }).catch((error) => {
             alert('Post to server not working')
         });
-        this.props.history.push('/thankyou')
     }
     render() {
         return (
